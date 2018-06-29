@@ -1,11 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/sg.min.css' />
+  <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" 
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" 
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,600" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="logo">
+          <span class="p1">Un</span><span class="p2">scrambler</span>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <input type="text" id="word" placeholder="e.g. iamottniov">
+        <div id="search-btn">
+            <i class="fas fa-search"></i>
+            <!--<i class="fas fa-circle-notch "></i>-->
+        </div>
+      </div>
+
+      <div class="col-12" id="result">
+        <div class="word-card">
+            motivation
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="x-templ" id="word-template">
+
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/javascripts/script.js"></script>
+</body>
+
 </html>
