@@ -50,7 +50,8 @@
         var wrd = $ico.attr('data-word');
         //'https://od-api.oxforddictionaries.com/api/v1/entries/en/'
         $.ajax({
-            url: 'http://let-us-text.us-east-2.elasticbeanstalk.com/oxf-entry',
+            //url: 'http://let-us-text.us-east-2.elasticbeanstalk.com/oxf-entry',
+            url: 'https://unscrambler-py.herokuapp.com/oxf-entry',
             //url: 'http://192.168.31.108:8998/oxf-entry',
             //url: '/samples/oxf-sample.json',
             method: 'GET',
