@@ -124,11 +124,11 @@
     function pronunciation(data) {
         return `
             <div class="pron block">
-                <div class="lex-cat">${data.lexicalCategory}
-                    <span data-mp3="${data.pronunciations[0].audioFile}" class="mp3-player">
-                        <i class="fas fa-volume-up"></i> 
-                    </span>
-                </div>
+                <div class="lex-cat">${data.lexicalCategory}</div>
+                <span class="pron">/${data.pronunciations[0].phoneticSpelling}/</span>
+                <span data-mp3="${data.pronunciations[0].audioFile}" class="mp3-player">
+                    <i class="fas fa-volume-up"></i> 
+                </span>
             </div>
             `;
     }
