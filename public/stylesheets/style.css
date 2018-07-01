@@ -21,10 +21,17 @@ a {
 }
 
 
+.ip {
+  margin: 0px auto;
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+}
+
 #search-btn {
   position: absolute;
-  left: 91%;
-  margin-top: -32px;
+  margin-top: -29px;
+  right: 10px;
   z-index: 6;
   cursor: pointer;
   color: #884EA0;
@@ -35,7 +42,7 @@ a {
 }
 
 #word {
-  width: 94%;
+  width: 100%;
   outline: none;
   box-shadow: 0px 1px 1px 0px grey;
   border: none;
@@ -47,6 +54,9 @@ a {
   line-height: 30px;
   letter-spacing: 1px;
   font-family: 'Muli', sans-serif;
+  box-sizing: border-box;
+  max-width: 600px;
+  margin: 0px auto;
 }
 
 @keyframes spin {
@@ -141,4 +151,15 @@ a {
   font-size: .9rem;
   font-weight: 600;
   text-transform: none;
+}
+
+.domain {
+  position: absolute;
+  right: 11px;
+  font-size: 11px;
+  margin-top: 1px;
+  background-color: #e4f1fd;
+  padding: 2px 5px;
+  border-radius: 2px;
+  font-weight: 400;
 }
