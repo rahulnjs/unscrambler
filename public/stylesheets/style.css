@@ -61,4 +61,84 @@ a {
 
 .word-card {
   font-family: 'Muli', sans-serif;
+  width: 100%;
+  position: relative;
+  font-size: 1.2rem;
+  padding: 13px;
+  box-shadow: -1px 1px 4px -1px rgba(0,0,0,.4);
+  border-radius: 1px;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.explore {
+  position: absolute;
+  right: 8px;
+  top: 16px;
+  font-size: .9rem;
+  color: gray;
+  cursor: pointer;
+}
+
+.pron {
+  text-transform: none;
+  font-size: .9rem;
+  color: gray;
+}
+
+.mp3-player {
+  margin-left: 10px;
+  color: #5a5a5a;
+  cursor: pointer;
+}
+
+.block {
+  margin: 10px 0px;
+}
+
+.derivs {
+  font-size: .8rem;
+  color: #a59999;
+  font-weight: 600;
+}
+
+.meaning {
+  margin-top: 10px;
+  font-size: .9rem;
+  text-transform: none;
+  margin-left: 15px;
+  color: #565252;
+  font-weight: 600;
+}
+
+.exmpls {
+  margin-top: 7px;
+  color: gray;
+}
+
+
+.exmpl {
+  font-size: .8rem;
+  font-weight: normal;
+  color: #a0a0a0;
+}
+
+.sub-meaning {
+  font-weight: 400;
+}
+
+.lex-cat {
+  margin-top: -5px;
+  margin-bottom: 5px;
+  font-size: .8rem;
+}
+
+
+.no-meaning {
+  color: red;
+  margin: 15px 10px 5px 10px;
+  font-size: .9rem;
+  font-weight: 600;
+  text-transform: none;
 }
