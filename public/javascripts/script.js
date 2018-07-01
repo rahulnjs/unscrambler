@@ -5,6 +5,11 @@
 
     $('#search-btn').on('click', function() {
         var ip = $('#word').val();
+        if(!ip) {
+            return;
+        } else {
+            ip = ip.toLowerCase();
+        }
         var $searchBtn = $(this);
         if(ip) {
             $searchBtn.html(loaderIco);
@@ -15,6 +20,7 @@
                 },
                 method: 'get',
                 success: function(data) {
+                    console.log(data);
                     $('#result').html('');
                     data.words.forEach(function(word) {
                         $('#result').append(`
@@ -27,8 +33,8 @@
                         </div>
                         `);
                     });
-                    if(!data) {
-                        $('#result').append('No words found.');
+                    if(data.words.length == 0) {
+                        $('#result').append('<div class="no-meaning">No words found.</div>');
                     }
                     setDefaultIco();
                 },
