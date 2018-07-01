@@ -62,7 +62,7 @@
                 try {
                     var $container = $('#' + wrd);
                     data = $.parseJSON(data);
-                    console.dir(data);
+                    //console.dir(data);
                     if(!data.error) {
                         d = data.results[0];
                         for(var i = 0; i < d.lexicalEntries.length; i++) {
@@ -98,9 +98,12 @@
         for(var i = 0; i < senses.length; i++) {
             var wht = sub ? '<i class="fas fa-check"></i> ' :  (i + 1) + '. ';
             var cls = sub ? 'sub-meaning' : '';
+            var text = senses[i].crossReferenceMarkers ? 
+                         senses[i].crossReferenceMarkers[0] : senses[i].definitions[0];
+            var domain = senses[i].domains ? 
+                            `<span class="domain"> ${senses[i].domains[0]} </span>` : '';             
             all += `<div class="meaning ${cls}">
-                        <span>${wht}</span> ${senses[i].definitions[0]}`; 
-            all += senses[i].domains ? `<span class="domain"> ${senses[i].domains[0]} </span>` : '';
+                        <span>${wht}</span>${domain} ${text}`; 
             all += getExamples(senses[i].examples);
             if(senses[i].subsenses) {
                 all += getSenses(senses[i].subsenses, true);
@@ -125,7 +128,7 @@
         return `
             <div class="pron block">
                 <div class="lex-cat">${data.lexicalCategory}</div>
-                <span class="pron">/${data.pronunciations[0].phoneticSpelling}/</span>
+                <span class="pronunce">${data.pronunciations[0].phoneticSpelling}</span>
                 <span data-mp3="${data.pronunciations[0].audioFile}" class="mp3-player">
                     <i class="fas fa-volume-up"></i> 
                 </span>

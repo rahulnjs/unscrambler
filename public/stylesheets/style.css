@@ -1,23 +1,30 @@
 body {
   padding: 0;
   margin: 0;
+  background-color: #e9ebee;
 }
 
 div.logo {
   font-family: 'IM Fell English SC', serif;
-  font-size: 2.7rem;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 5%;
 }
 
 div.logo .p1 {
-  color:#884EA0;
+  /*color:#884EA0;*/
+  color: rgba(97, 213, 228, 1);
 }
 
 div.logo .p2{
-  color:#D2B4DE;
+  /*color:#D2B4DE;*/
+  color: rgba(21, 101, 192, 1);
 }
 
 a {
-  color: #D2B4DE;
+  color: rgba(0, 39, 82, 1);
+  font-weight: 600;
+  text-decoration: none;
 }
 
 
@@ -34,7 +41,7 @@ a {
   right: 10px;
   z-index: 6;
   cursor: pointer;
-  color: #884EA0;
+  color: rgba(21, 101, 192, 1);;
 }
 
 .loader {
@@ -76,10 +83,13 @@ a {
   font-size: 1.2rem;
   padding: 13px;
   box-shadow: -1px 1px 4px -1px rgba(0,0,0,.4);
-  border-radius: 1px;
+  border-radius: 2px;
   box-sizing: border-box;
   text-transform: capitalize;
   margin-bottom: 10px;
+  background-color: #fff;
+  max-width: 600px;
+  margin: 0px auto;
 }
 
 .explore {
@@ -96,6 +106,16 @@ a {
   font-size: .9rem;
   color: gray;
 }
+
+.pronunce:after {
+  content: '/';
+}
+
+.pronunce:before {
+  content: '/';
+}
+
+
 
 .mp3-player {
   margin-left: 10px;
@@ -154,12 +174,30 @@ a {
 }
 
 .domain {
-  position: absolute;
-  right: 11px;
-  font-size: 11px;
+ /* position: absolute;
+  right: 11px; 
   margin-top: 1px;
+  */
+  font-size: 11px;
   background-color: #e4f1fd;
-  padding: 2px 5px;
+  padding: 2px 3px 2px 5px;
+  margin-right: 5px;
   border-radius: 2px;
   font-weight: 400;
+}
+
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  bottom: 10px;
+  font-family: 'Muli', sans-serif;
+  font-size: .9rem;
+}
+
+
+.banner {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 40px;
+  font-family: 'Muli', sans-serif;
 }
