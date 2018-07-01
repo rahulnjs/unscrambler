@@ -5,12 +5,15 @@ module.exports.go = function (tWord) {
     var map = getFrequency(tWord);
     var file = 'api/' + tWord.length + '_FILE.CAB';
     try {
+        console.log('Reading file');
         fs.readFileSync(file).toString().split("\r\n").forEach(function(word) {
             if(areMapsEqual(map, getFrequency(word.toLowerCase()))) {
                 res.push(word);
             }
         });
+        
     } catch (error) {
+        console.log('couldn\'t read file');
         console.dir(error);
     }
     return {
