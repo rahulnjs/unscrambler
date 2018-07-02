@@ -202,3 +202,14 @@ a {
   font-family: 'Muli', sans-serif;
   color: gray;
 }
+
+
+.no-words {
+  max-width: 600px;
+  color: red;
+  font-size: .9rem;
+  font-weight: 600;
+  text-transform: none;
+  font-family: 'Muli', sans-serif;
+  margin: 0px auto;
+}

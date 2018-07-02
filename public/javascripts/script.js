@@ -32,7 +32,7 @@
                         `);
                     });
                     if(data.words.length == 0) {
-                        $('#result').append('<div class="no-meaning">No words found.</div>');
+                        $('#result').append('<div class="no-words">No words found.</div>');
                     }
                     setDefaultIco();
                 },
@@ -50,6 +50,7 @@
     $('#word').on('keyup', function(e) {
         if(e.keyCode == 13) {
             $('#search-btn').click();
+            $(this).blur();
         }
     });
 
@@ -79,8 +80,9 @@
                             $container.append(getSenses(
                                 d.lexicalEntries[i].entries[0].senses
                             ), false);
-                            $container.append(getDerivatives(d.lexicalEntries[i].derivatives));
+                            
                         }
+                        $container.append(getDerivatives(d.lexicalEntries[0].derivatives));
                     } else {
                         showNoResponse($container);
                     }
