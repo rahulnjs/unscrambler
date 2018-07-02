@@ -14,11 +14,10 @@
             $.ajax({
                 url: 'find',
                 data: {
-                    word: ip
+                    word: ip.toLowerCase()
                 },
                 method: 'get',
                 success: function(data) {
-                    
                     $('#result').html('');
                     data.words.forEach(function(word) {
                         $('#result').append(`
