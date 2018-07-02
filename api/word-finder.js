@@ -6,7 +6,7 @@ module.exports.go = function (tWord) {
     var file = 'api/' + tWord.length + '_FILE.CAB';
     try {
         fs.readFileSync(file).toString().split(/\r?\n/).forEach(function(word) {
-            if(areMapsEqual(map, getFrequency(word.toLowerCase()))) {
+            if(areMapsEqual(map, getFrequency(word))) {
                 res.push(word);
             }
         });
