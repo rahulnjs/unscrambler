@@ -7,9 +7,7 @@
         var ip = $('#word').val();
         if(!ip) {
             return;
-        } else {
-            ip = ip.toLowerCase();
-        }
+        } 
         var $searchBtn = $(this);
         if(ip) {
             $searchBtn.html(loaderIco);
@@ -20,7 +18,6 @@
                 },
                 method: 'get',
                 success: function(data) {
-                    console.log(data);
                     $('#result').html('');
                     data.words.forEach(function(word) {
                         $('#result').append(`
@@ -49,12 +46,19 @@
         }
     });
 
+    $('#word').on('keyup', function(e) {
+        if(e.keyCode == 13) {
+            $('#search-btn').click();
+        }
+    });
+
 
     $('#result').on('click', '.explore', function() {
         var $ico = $(this);
         $ico.html(loaderIco);
+        $ico.css({'pointer-events': 'none'});
         var wrd = $ico.attr('data-word');
-        //'https://od-api.oxforddictionaries.com/api/v1/entries/en/'
+        var $container = $('#' + wrd);
         $.ajax({
             //url: 'http://let-us-text.us-east-2.elasticbeanstalk.com/oxf-entry',
             url: 'https://unscrambler-py.herokuapp.com/oxf-entry',
@@ -66,9 +70,7 @@
             },
             success: function(data) {
                 try {
-                    var $container = $('#' + wrd);
                     data = $.parseJSON(data);
-                    //console.dir(data);
                     if(!data.error) {
                         d = data.results[0];
                         for(var i = 0; i < d.lexicalEntries.length; i++) {
@@ -79,20 +81,25 @@
                             $container.append(getDerivatives(d.lexicalEntries[i].derivatives));
                         }
                     } else {
-                        $container.append('<div class="no-meaning">No meaning found.</div>');
+                        showNoResponse($container);
                     }
                     $ico.html('');
                 } catch(error) {
-                    console.dir(error)
+                    showNoResponse($container);
+                    $ico.html('');
                 }
             },
             error: function(err) {
-
+                showNoResponse($container);
+                $ico.html('');
             }
         });
     });
 
-    //
+    function showNoResponse($container) {
+        $container.append('<div class="no-meaning">No meaning found.</div>');
+    }
+
     $('#result').on('click', '.mp3-player', function() {
         var mp3 = new Audio($(this).attr('data-mp3'));
         mp3.play();
@@ -159,7 +166,5 @@
         </div>
         `;
     }
-
-
 
 })();

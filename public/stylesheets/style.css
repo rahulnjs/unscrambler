@@ -37,11 +37,13 @@ a {
 
 #search-btn {
   position: absolute;
-  margin-top: -29px;
+  margin-top: -41px;
   right: 10px;
   z-index: 6;
   cursor: pointer;
   color: rgba(21, 101, 192, 1);;
+  height: 42px !important;
+  line-height: 42px;
 }
 
 .loader {
@@ -57,13 +59,14 @@ a {
   height: 44px !important;
   border-radius: 2px;
   font-size: 20px;
-  padding: 2px 10px 3px;
+  padding: 1px 34px 3px 8px;
   line-height: 30px;
   letter-spacing: 1px;
   font-family: 'Muli', sans-serif;
   box-sizing: border-box;
   max-width: 600px;
   margin: 0px auto;
+  text-transform: lowercase;
 }
 
 @keyframes spin {
@@ -86,10 +89,10 @@ a {
   border-radius: 2px;
   box-sizing: border-box;
   text-transform: capitalize;
-  margin-top: 20px;
   background-color: #fff;
   max-width: 600px;
   margin: 0px auto;
+
 }
 
 .explore {
@@ -167,7 +170,7 @@ a {
 
 .no-meaning {
   color: red;
-  margin: 15px 10px 5px 10px;
+  margin: 15px 10px 5px 0px;
   font-size: .9rem;
   font-weight: 600;
   text-transform: none;
@@ -175,10 +178,6 @@ a {
 }
 
 .domain {
- /* position: absolute;
-  right: 11px; 
-  margin-top: 1px;
-  */
   font-size: 11px;
   background-color: #e4f1fd;
   padding: 2px 3px 2px 5px;
@@ -201,4 +200,5 @@ a {
   text-align: center;
   margin-top: 40px;
   font-family: 'Muli', sans-serif;
+  color: gray;
 }
