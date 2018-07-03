@@ -14,7 +14,7 @@
             $.ajax({
                 url: 'find',
                 data: {
-                    word: ip.toLowerCase()
+                    word: ip.toLowerCase().trim()
                 },
                 method: 'get',
                 success: function(data) {
