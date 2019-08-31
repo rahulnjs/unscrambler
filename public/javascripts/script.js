@@ -11,6 +11,7 @@
         var $searchBtn = $(this);
         if(ip) {
             $searchBtn.html(loaderIco);
+            var start = new Date().getTime();
             $.ajax({
                 url: 'find',
                 data: {
@@ -18,6 +19,7 @@
                 },
                 method: 'get',
                 success: function(data) {
+                    var end = new Date().getTime();
                     $('#result').html('');
                     data.words.forEach(function(word) {
                         $('#result').append(`
@@ -32,6 +34,10 @@
                     });
                     if(data.words.length == 0) {
                         $('#result').append('<div class="no-words">No words found.</div>');
+                    } else {
+                        var l = data.words.length;
+                        var sec = l + ' word' + (l > 1 ? 's': '') + ' in ' + ((end-start) / 1000).toFixed(2) + ' sec';
+                        $('#result').prepend('<div class="stats">' + sec + '</div>');
                     }
                     setDefaultIco();
                 },
@@ -61,10 +67,7 @@
         var wrd = $ico.attr('data-word');
         var $container = $('#' + wrd);
         $.ajax({
-            //url: 'http://let-us-text.us-east-2.elasticbeanstalk.com/oxf-entry',
-            url: 'https://unscrambler-py.herokuapp.com/oxf-entry',
-            //url: 'http://192.168.31.108:8998/oxf-entry',
-            //url: '/samples/oxf-sample.json',
+            url: 'meaning',
             method: 'GET',
             data: {
                 word: wrd
@@ -113,10 +116,11 @@
         for(var i = 0; i < senses.length; i++) {
             var wht = sub ? '<i class="fas fa-check"></i> ' :  (i + 1) + '. ';
             var cls = sub ? 'sub-meaning' : '';
+            console.log(senses[i]);
             var text = senses[i].crossReferenceMarkers ? 
                          senses[i].crossReferenceMarkers[0] : senses[i].definitions[0];
             var domain = senses[i].domains ? 
-                            `<span class="domain"> ${senses[i].domains[0]} </span>` : '';             
+                            `<span class="domain"> ${senses[i].domains[0].text} </span>` : '';             
             all += `<div class="meaning ${cls}">
                         <span>${wht}</span>${domain} ${text}`; 
             all += getExamples(senses[i].examples);
@@ -142,7 +146,7 @@
     function pronunciation(data) {
         return `
             <div class="pron block">
-                <div class="lex-cat">${data.lexicalCategory}</div>
+                <div class="lex-cat">${data.lexicalCategory.text}</div>
                 <span class="pronunce">${data.pronunciations[0].phoneticSpelling}</span>
                 <span data-mp3="${data.pronunciations[0].audioFile}" class="mp3-player">
                     <i class="fas fa-volume-up"></i> 

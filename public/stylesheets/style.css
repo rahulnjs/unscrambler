@@ -16,7 +16,7 @@ div.logo .p1 {
   color: rgba(97, 213, 228, 1);
 }
 
-div.logo .p2{
+div.logo .p2 {
   /*color:#D2B4DE;*/
   color: rgba(21, 101, 192, 1);
 }
@@ -26,7 +26,6 @@ a {
   font-weight: 600;
   text-decoration: none;
 }
-
 
 .ip {
   margin: 0px auto;
@@ -41,7 +40,8 @@ a {
   right: 10px;
   z-index: 6;
   cursor: pointer;
-  color: rgba(21, 101, 192, 1);;
+  color: rgba(21, 101, 192, 1);
+  ;
   height: 42px !important;
   line-height: 42px;
 }
@@ -73,7 +73,6 @@ a {
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(1turn);
   }
@@ -85,14 +84,13 @@ a {
   position: relative;
   font-size: 1.2rem;
   padding: 13px;
-  box-shadow: -1px 1px 4px -1px rgba(0,0,0,.4);
+  box-shadow: -1px 1px 4px -1px rgba(0, 0, 0, .4);
   border-radius: 2px;
   box-sizing: border-box;
   text-transform: capitalize;
   background-color: #fff;
   max-width: 600px;
   margin: 0px auto;
-
 }
 
 .explore {
@@ -117,8 +115,6 @@ a {
 .pronunce:before {
   content: '/';
 }
-
-
 
 .mp3-player {
   margin-left: 10px;
@@ -150,7 +146,6 @@ a {
   color: gray;
 }
 
-
 .exmpl {
   font-size: .8rem;
   font-weight: normal;
@@ -166,7 +161,6 @@ a {
   margin-bottom: 5px;
   font-size: .8rem;
 }
-
 
 .no-meaning {
   color: red;
@@ -191,9 +185,9 @@ a {
   text-align: center;
   bottom: 10px;
   font-family: 'Muli', sans-serif;
-  font-size: .9rem;
+  font-size: .8rem;
+  color: gray;
 }
-
 
 .banner {
   font-size: 1.5rem;
@@ -203,7 +197,6 @@ a {
   color: gray;
 }
 
-
 .no-words {
   max-width: 600px;
   color: red;
@@ -212,4 +205,14 @@ a {
   text-transform: none;
   font-family: 'Muli', sans-serif;
   margin: 0px auto;
+}
+
+.stats {
+  text-align: right;
+  font-family: 'Muli', sans-serif;
+  font-size: .7rem;
+  max-width: 600px;
+  margin: 0px auto;
+  margin-bottom: 5px;
+  color: gray;
 }
